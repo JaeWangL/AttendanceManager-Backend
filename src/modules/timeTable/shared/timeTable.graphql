@@ -1,0 +1,7 @@
+type TimeTable {
+    id: Int!
+    userId: Int!
+    day: Int!
+    period: Int!
+    user: User!
+}

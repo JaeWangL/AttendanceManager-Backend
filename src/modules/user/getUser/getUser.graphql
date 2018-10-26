@@ -1,0 +1,9 @@
+type GetUserResponse {
+    isOk: Boolean!
+    error: String
+    user: User
+}
+
+type Query {
+    getUser(id: Int!): GetUserResponse!
+}

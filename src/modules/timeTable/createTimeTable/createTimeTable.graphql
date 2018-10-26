@@ -1,0 +1,12 @@
+type CreateTimeTableResponse {
+    isOk: Boolean!
+    error: String
+}
+
+type Mutation {
+    createTimeTable(
+        userId: Int!
+        day: Int!
+        period: Int!
+    ): CreateTimeTableResponse!
+}

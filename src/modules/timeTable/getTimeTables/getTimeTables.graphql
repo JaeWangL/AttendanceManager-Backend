@@ -1,0 +1,9 @@
+type GetTimeTablesResponse {
+    isOk: Boolean!
+    error: String
+    timeTables: [TimeTable]
+}
+
+type Query {
+    getTimeTables(userId: Int!): GetTimeTablesResponse!
+}

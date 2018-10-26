@@ -1,0 +1,55 @@
+type CreateTimeTableResponse {
+  isOk: Boolean!
+  error: String
+}
+
+type Mutation {
+  createTimeTable(userId: Int!, day: Int!, period: Int!): CreateTimeTableResponse!
+  createUser(email: String!, password: String!): CreateUserResponse!
+  login(email: String!, password: String!): LoginResponse!
+}
+
+type GetTimeTablesResponse {
+  isOk: Boolean!
+  error: String
+  timeTables: [TimeTable]
+}
+
+type Query {
+  getTimeTables(userId: Int!): GetTimeTablesResponse!
+  getUser(id: Int!): GetUserResponse!
+}
+
+type TimeTable {
+  id: Int!
+  userId: Int!
+  day: Int!
+  period: Int!
+  user: User!
+}
+
+type CreateUserResponse {
+  isOk: Boolean!
+  error: String
+  token: String
+}
+
+type GetUserResponse {
+  isOk: Boolean!
+  error: String
+  user: User
+}
+
+type LoginResponse {
+  isOk: Boolean!
+  error: String
+  userId: Int
+  token: String
+}
+
+type User {
+  id: Int!
+  email: String
+  password: String
+  timeTables: [TimeTable]
+}
